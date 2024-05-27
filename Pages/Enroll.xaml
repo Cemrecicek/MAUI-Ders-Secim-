@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="finaldeneme.Pages.Enroll"
+             Title="Enroll">
+    <VerticalStackLayout Background="AliceBlue" WidthRequest="450" HeightRequest="800">
+        <ScrollView>
+            <StackLayout>
+                <HorizontalStackLayout Padding="20" Spacing="80">
+                    <ListView x:Name="StudentId_List_View" WidthRequest="200">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <HorizontalStackLayout Spacing="10">
+                                            <Label Text="{Binding ID}"/>
+                                            <Label Text="{Binding Name}"/>
+                                            <Label Text="{Binding Department}"/>
+                                        </HorizontalStackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <ListView x:Name="CourseId_List_View" WidthRequest="200">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Text="{Binding Course_Name}"/>
+                                        <Label Text="{Binding Course_Code}"/>
+                                    </HorizontalStackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </HorizontalStackLayout>
+                
+
+
+
+
+
+                <Button Text="ADD" x:Name="Add_en" WidthRequest="80" Margin="10" Clicked="Add_en_Clicked" />
+
+                <Button Text="SHOW" x:Name="Show_en" WidthRequest="80" Margin="10" Clicked="Show_en_Clicked" />
+
+                <ListView x:Name="Enroll_List_View">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <VerticalStackLayout Padding="20">
+                                    <Label Text="{Binding StudentID }"/>
+                                    <Label Text="{Binding CourseCode}"/>
+                                    <Button Text="DELETE" x:Name="Delete_en" BindingContext="{Binding EnrollID}" WidthRequest="80" Margin="10" Clicked="Delete_en_Clicked" />
+                                </VerticalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+            
+
+
+            
+        </ScrollView>
+
+
+    </VerticalStackLayout>
+</ContentPage>

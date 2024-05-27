@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="finaldeneme.Pages.Course"
+             Title="Course">
+    <VerticalStackLayout Background="AliceBlue" WidthRequest="450" HeightRequest="800">
+        <ScrollView>
+
+            <StackLayout Margin="20" VerticalOptions="Center">
+                <StackLayout Margin="0,10,0,10">
+                    <Label Text="Course Name" FontAttributes="Bold"/>
+                    <Entry x:Name="Course_name"/>
+                </StackLayout>
+                <StackLayout Margin="0,10,0,10">
+                    <Label Text="Course Code" FontAttributes="Bold"/>
+                    <Entry x:Name="Course_code" Keyboard="Numeric"/>
+                </StackLayout>
+
+                <Button Text="ADD" x:Name="Add_crs" WidthRequest="80" Margin="10" Clicked="Add_crs_Clicked"  />
+
+                <Button Text="SHOW" x:Name="Show_crs" WidthRequest="80" Margin="10" Clicked="Show_crs_Clicked"/>
+
+                <ListView x:Name="Course_List_View">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding Course_Name}"/>
+                                    <Label Text="{Binding Course_Code}"/>                                   
+                                    <Button Text="DELETE" x:Name="Delete_crs" BindingContext="{Binding CourseId}" Clicked="Delete_crs_Clicked" WidthRequest="80" Margin="10" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </StackLayout>
+        </ScrollView>
+
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="finaldeneme.Pages.Student"
+             Title="Student">
+    <VerticalStackLayout Background="AliceBlue" WidthRequest="450" HeightRequest="800">
+        <ScrollView>
+            
+            <StackLayout Margin="20" VerticalOptions="Center">
+                <StackLayout Margin="0,10,0,10">
+                    <Label Text="Student" FontAttributes="Bold"/>
+                    <Entry x:Name="Name"/>
+                </StackLayout>
+                <StackLayout Margin="0,10,0,10">
+                    <Label Text="Department" FontAttributes="Bold"/>
+                    <Entry x:Name="Dept"/>
+                </StackLayout>
+
+                <Button Text="ADD" x:Name="Add_st" WidthRequest="80" Margin="10" Clicked="Add_st_Clicked"  />
+            
+                <Button Text="SHOW" x:Name="Show_st" WidthRequest="80" Margin="10" Clicked="Show_st_Clicked" />
+
+                <ListView x:Name="Student_List_View">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding ID}"/>
+                                    <Label Text="{Binding Name}"/>
+                                    <Label Text="{Binding Department}"/>
+                                    <Button x:Name="Delete_st" Text="DELETE" BindingContext="{Binding ID}" Clicked="Delete_st_Clicked" WidthRequest="80" Margin="10"/>
+                                    
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </StackLayout>
+        </ScrollView>
+
+
+    </VerticalStackLayout>
+</ContentPage>
